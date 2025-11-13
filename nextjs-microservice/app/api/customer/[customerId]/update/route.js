@@ -12,5 +12,12 @@ export async function PUT(request, context) {
     name,
     email,
   });
-  return Response.json(updated);
+
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  };
+
+  return Response.json(updated, {headers: headers});
 }

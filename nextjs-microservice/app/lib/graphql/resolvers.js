@@ -7,6 +7,10 @@ export const resolvers = {
       await connectDB();
       return Customer.findById(id);
     },
+    customers: async () => {
+      await connectDB();
+      return Customer.find();
+    },
   },
   Mutation: {
     createCustomer: async (_, { name, email }) => {
